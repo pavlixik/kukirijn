@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KukirinWheel Shop | Profesionální Elektrokoloběžky</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #333333 100%); }
+        .card:hover { transform: translateY(-5px); transition: 0.3s; }
+    </style>
+</head>
+<body>
+
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-xl">KW</div>
+                <span class="text-2xl font-bold tracking-tighter">KukirinWheel <span class="text-orange-500">Shop</span></span>
+            </div>
+            <div class="hidden md:flex gap-6 font-medium text-gray-600">
+                <a href="#produkty" class="hover:text-orange-500">Produkty</a>
+                <a href="#o-nas" class="hover:text-orange-500">O nás</a>
+                <a href="#recenze" class="hover:text-orange-500">Recenze</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient text-white py-20 px-4 text-center">
+        <h1 class="text-5xl font-extrabold mb-4">Rychlost. Výkon. Svoboda.</h1>
+        <p class="text-xl text-gray-300 mb-8">Nejširší nabídka profesionálních koloběžek KuKirin v ČR.</p>
+        <a href="#produkty" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-bold transition">Prozkoumat modely</a>
+    </header>
+
+    <section id="produkty" class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold mb-10 text-center">Naše Top Modely</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card">
+                <img src="https://images.unsplash.com/photo-1597437146781-80a271790403?auto=format&fit=crop&q=80&w=800" alt="KuKirin G2 Pro" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">KuKirin G2 Pro</h3>
+                    <p class="text-gray-500 text-sm mb-4">Motor 600W | Dojezd 55km | Rychlost 45km/h</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-orange-600">18 490 Kč</span>
+                        <button onclick="openCheckout('KuKirin G2 Pro', '18 490 Kč')" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Koupit nyní</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card">
+                <img src="https://images.unsplash.com/photo-1605515298946-d062f2e9da53?auto=format&fit=crop&q=80&w=800" alt="KuKirin G3" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">KuKirin G3 Adventurer</h3>
+                    <p class="text-gray-500 text-sm mb-4">Motor 1200W | Dojezd 70km | Brutální výkon</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-orange-600">24 990 Kč</span>
+                        <button onclick="openCheckout('KuKirin G3 Adventurer', '24 990 Kč')" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Koupit nyní</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-lg overflow-hidden card">
+                <img src="https://images.unsplash.com/photo-1582236521503-461462060155?auto=format&fit=crop&q=80&w=800" alt="KuKirin M4" class="w-full h-64 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold">KuKirin M4 Pro</h3>
+                    <p class="text-gray-500 text-sm mb-4">Motor 500W | Pohodlné sedlo | Skládací</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-2xl font-bold text-orange-600">14 200 Kč</span>
+                        <button onclick="openCheckout('KuKirin M4 Pro', '14 200 Kč')" class="bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800">Koupit nyní</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="o-nas" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold mb-6">O KukirinWheel Shop</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Jsme autorizovaní specialisté na značku KuKirin. Naším cílem je přinášet moderní městskou mobilitu do každého domova. Všechny koloběžky procházejí technickou kontrolou a nabízíme plnou záruku i pozáruční servis. S námi nešlapete vedle.
+            </p>
+        </div>
+    </section>
+
+    <section id="recenze" class="container mx-auto py-16 px-4">
+        <h2 class="text-3xl font-bold mb-10 text-center">Zkušenosti zákazníků</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <p class="italic text-gray-600 mb-4">"G2 Pro přišla za 3 dny. Všechno v pořádku zabalené, pecka stroj!"</p>
+                <p class="font-bold">- Petr M.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <p class="italic text-gray-600 mb-4">"Nejlepší cena na trhu. Komunikace s obchodem skvělá."</p>
+                <p class="font-bold">- Jana S.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <p class="italic text-gray-600 mb-4">"Platil jsem přes PayPal, vše proběhlo hladce. Doporučuji."</p>
+                <p class="font-bold">- Lukáš K.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm border">
+                <p class="italic text-gray-600 mb-4">"Koloběžka je brutální, zvládá i kopce v Praze bez problému."</p>
+                <p class="font-bold">- Martin V.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-10 text-center">
+        <p>&copy; 2024 KukirinWheel Shop. Všechna práva vyhrazena.</p>
+    </footer>
+
+    <script>
+        function openCheckout(item, price) {
+            const checkoutWin = window.open("", "Checkout", "width=600,height=800");
+            
+            const html = `
+                <html>
+                <head>
+                    <title>Pokladna - PayPal Platba</title>
+                    <script src="https://cdn.tailwindcss.com"><\/script>
+                </head>
+                <body class="bg-gray-50 p-8 font-sans">
+                    <div id="form-container">
+                        <div class="flex items-center justify-center mb-8">
+                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" width="80">
+                        </div>
+                        <h2 class="text-2xl font-bold mb-6">Doručovací údaje</h2>
+                        <p class="mb-4 text-gray-600 text-sm">Objednáváte: <strong>${item}</strong> za <strong>${price}</strong></p>
+                        
+                        <div class="space-y-4">
+                            <input type="text" placeholder="Jméno a Příjmení" class="w-full p-3 border rounded">
+                            <input type="email" placeholder="Email" class="w-full p-3 border rounded">
+                            <input type="text" placeholder="Ulice a č.p." class="w-full p-3 border rounded">
+                            <input type="text" placeholder="Město" class="w-full p-3 border rounded">
+                            <input type="text" placeholder="PSČ" class="w-full p-3 border rounded">
+                        </div>
+
+                        <button onclick="processPayment()" class="w-full bg-[#0070ba] text-white font-bold py-4 rounded-lg mt-8 hover:bg-[#005ea6] transition">
+                            Zaplatit s PayPal
+                        </button>
+                    </div>
+
+                    <div id="success-container" class="hidden text-center mt-20">
+                        <div class="text-green-500 text-6xl mb-4">✓</div>
+                        <h2 class="text-3xl font-bold mb-4">Platba přijata!</h2>
+                        <p class="text-lg text-gray-700">Počkejte, než vaše platba bude zpracována a odeslána (cca 2-3 dny). Poté budete informováni přes email.</p>
+                        <button onclick="window.close()" class="mt-8 text-blue-500 underline">Zavřít okno</button>
+                    </div>
+
+                    <script>
+                        function processPayment() {
+                            document.getElementById('form-container').classList.add('hidden');
+                            document.getElementById('success-container').classList.remove('hidden');
+                        }
+                    <\/script>
+                </body>
+                </html>
+            `;
+            
+            checkoutWin.document.write(html);
+        }
+    </script>
+
+</body>
+</html>
