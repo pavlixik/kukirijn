@@ -7,171 +7,221 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a1a1a; }
-        .product-card { transition: all 0.3s ease; border: 1px solid #eee; }
-        .product-card:hover { transform: translateY(-10px); border-color: #ff5f00; box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
-        .badge-sale { background: #ff5f00; color: white; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 12px; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #ffffff; color: #1a1a1a; scroll-behavior: smooth; }
+        .product-card { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); border: 1px solid #f0f0f0; }
+        .product-card:hover { transform: translateY(-12px); border-color: #ff5f00; box-shadow: 0 25px 50px -12px rgba(255, 95, 0, 0.15); }
+        .badge-sale { background: #ff5f00; color: white; padding: 4px 12px; border-radius: 99px; font-weight: 800; font-size: 11px; text-transform: uppercase; }
+        .hero-bg { background: radial-gradient(circle at top right, #fff9f5, #ffffff); }
     </style>
 </head>
 <body>
 
-    <nav class="border-b sticky top-0 bg-white/80 backdrop-blur-md z-50">
+    <nav class="border-b sticky top-0 bg-white/90 backdrop-blur-md z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-black flex items-center justify-center rounded-xl">
-                    <span class="text-white font-black text-xl">KW</span>
+                <div class="w-10 h-10 bg-black flex items-center justify-center rounded-xl rotate-3">
+                    <span class="text-white font-black text-xl -rotate-3">KW</span>
                 </div>
                 <span class="text-xl font-extrabold tracking-tight">KUKIRIN<span class="text-[#ff5f00]">WHEEL</span></span>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold text-sm uppercase tracking-wider text-gray-500">
-                <a href="#produkty" class="hover:text-black transition">Nabídka</a>
-                <a href="#o-nas" class="hover:text-black transition">O nás</a>
-                <a href="#recenze" class="hover:text-black transition">Recenze</a>
+            <div class="hidden md:flex gap-8 font-bold text-xs uppercase tracking-widest text-gray-400">
+                <a href="#produkty" class="hover:text-[#ff5f00] transition">Modely</a>
+                <a href="#o-nas" class="hover:text-[#ff5f00] transition">O nás</a>
+                <a href="#recenze" class="hover:text-[#ff5f00] transition">Recenze</a>
             </div>
         </div>
     </nav>
 
-    <header class="py-16 text-center bg-gray-50">
-        <h1 class="text-5xl md:text-7xl font-extrabold mb-4 tracking-tighter">PROFESIONÁLNÍ <br><span class="text-[#ff5f00]">ELEKTROKOLOBĚŽKY</span></h1>
-        <p class="text-gray-500 text-lg max-w-2xl mx-auto px-6">Expresní dodání do 2 dnů zdarma na všechny modely. Záruka nejnižší ceny v ČR.</p>
+    <header class="py-20 text-center hero-bg border-b">
+        <div class="container mx-auto px-6">
+            <span class="bg-orange-100 text-[#ff5f00] px-4 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Limitovaná nabídka</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter mt-4">KUKIRIN <br><span class="text-[#ff5f00]">PRO SHOP</span></h1>
+            <p class="text-gray-500 text-xl max-w-2xl mx-auto mb-10">Nejvýkonnější stroje za bezkonkurenční ceny. Expresní dodání do 2 dnů po celé ČR zdarma.</p>
+            <a href="#produkty" class="bg-black text-white px-10 py-4 rounded-2xl font-black uppercase hover:bg-[#ff5f00] transition shadow-xl shadow-orange-200">Prohlédnout stroje</a>
+        </div>
     </header>
 
-    <section id="produkty" class="container mx-auto py-20 px-6">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <section id="produkty" class="container mx-auto py-24 px-6">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col">
+                <div class="flex justify-between items-start mb-6">
                     <span class="badge-sale">AKCE -69%</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/KukirinG2-1.png?v=1724317189" alt="Kukirin G2" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G2</h3>
-                <p class="text-gray-400 text-sm mb-4">Městský predátor s dojezdem 55km.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/pZ5TfE6.jpeg" alt="Kukirin G2" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G2</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">Kompaktní výkon pro každodenní jízdu.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
                     <div>
-                        <span class="text-gray-400 line-through text-sm">13 000 Kč</span>
-                        <div class="text-3xl font-black text-black">4 000 Kč</div>
+                        <span class="text-gray-300 line-through text-sm font-bold">13 000 Kč</span>
+                        <div class="text-4xl font-black text-black">4 000 Kč</div>
                     </div>
-                    <button onclick="openCheckout('KuKirin G2', '4 000 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <button onclick="openCheckout('KuKirin G2', '4 000 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="badge-sale">TOP CENA</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col border-[#ff5f00]/30 shadow-xl shadow-orange-50">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-sale">Bestseller</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/1_76c29b79-52e8-4674-871d-720938f61536.png?v=1716361876" alt="Kukirin G4" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G4</h3>
-                <p class="text-gray-400 text-sm mb-4">2000W brutální výkon a 11" kola.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/YZSSo3j.png" alt="Kukirin G2 Master" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G2 Master</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">Dva motory, dvojnásobná zábava.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
-                    <div class="text-3xl font-black text-black">7 000 Kč</div>
-                    <button onclick="openCheckout('KuKirin G4', '7 000 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <div class="text-4xl font-black text-black">7 000 Kč</div>
+                    <button onclick="openCheckout('KuKirin G2 Master', '7 000 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="badge-sale">DOPORUČUJEME</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-sale">Vysoký výkon</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/1_3a216f94-4062-4217-a065-2c3584346869.png?v=1716362547" alt="Kukirin G2 Master" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G2 Master</h3>
-                <p class="text-gray-400 text-sm mb-4">Dual motor 2000W, hydraulické odpružení.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/7BToECp.png" alt="Kukirin G4" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G4</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">Moderní design a brutální zrychlení.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
-                    <div class="text-3xl font-black text-black">7 000 Kč</div>
-                    <button onclick="openCheckout('KuKirin G2 Master', '7 000 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <div class="text-4xl font-black text-black">7 000 Kč</div>
+                    <button onclick="openCheckout('KuKirin G4', '7 000 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="badge-sale">VÝPRODEJ</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-sale">Výprodej</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/1_f8757041-3b76-4876-857e-073010b986f3.png?v=1716361448" alt="Kukirin G2 Max" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G2 Max</h3>
-                <p class="text-gray-400 text-sm mb-4">Dojezd až 80km a odnímatelné sedadlo.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/fWviAUj.png" alt="Kukirin G2 Max" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G2 Max</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">Dlouhý dojezd a maximální komfort.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
-                    <div class="text-3xl font-black text-black">2 000 Kč</div>
-                    <button onclick="openCheckout('KuKirin G2 Max', '2 000 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <div class="text-4xl font-black text-black">2 000 Kč</div>
+                    <button onclick="openCheckout('KuKirin G2 Max', '2 000 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="badge-sale">LIFETIME DEAL</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="badge-sale">Super cena</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/1_27063f25-b040-4965-9831-294723023912.png?v=1716362831" alt="Kukirin G3" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G3</h3>
-                <p class="text-gray-400 text-sm mb-4">Klasika s dotykovým displejem.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/38UXdAI.png" alt="Kukirin G3" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G3</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">Léty prověřený model s robustním rámem.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
-                    <div class="text-3xl font-black text-black">1 500 Kč</div>
-                    <button onclick="openCheckout('KuKirin G3', '1 500 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <div class="text-4xl font-black text-black">1 500 Kč</div>
+                    <button onclick="openCheckout('KuKirin G3', '1 500 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
-            <div class="product-card rounded-3xl p-6 bg-white flex flex-col">
-                <div class="flex justify-between items-start mb-4">
-                    <span class="badge-sale">ULTIMATE</span>
-                    <span class="text-green-500 font-bold text-xs uppercase">Skladem</span>
+            <div class="product-card rounded-[2.5rem] p-8 bg-white flex flex-col border-2 border-black">
+                <div class="flex justify-between items-start mb-6">
+                    <span class="bg-black text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest">Vlajková loď</span>
+                    <span class="text-green-500 font-bold text-[10px] uppercase tracking-widest">Skladem</span>
                 </div>
-                <img src="https://www.kukirin.store/cdn/shop/files/01_2400x_b29c5c99-0d19-4828-98e6-7b5687b1c4b7.png?v=1711612713" alt="Kukirin G4 Max" class="w-full h-64 object-contain mb-6">
-                <h3 class="text-2xl font-extrabold mb-2">KuKirin G4 Max</h3>
-                <p class="text-gray-400 text-sm mb-4">Nejvýkonnější bestie na trhu.</p>
-                <p class="text-orange-500 font-bold text-sm mb-4">🚚 Expresní dodání do 2 dnů zdarma</p>
+                <div class="h-64 flex items-center justify-center mb-8">
+                    <img src="https://i.imgur.com/5cV31TJ.png" alt="Kukirin G4 Max" class="max-h-full object-contain">
+                </div>
+                <h3 class="text-2xl font-black mb-2">KuKirin G4 Max</h3>
+                <p class="text-gray-400 text-sm mb-4 italic">To nejlepší, co můžete od KuKirin mít.</p>
+                <div class="bg-orange-50 p-3 rounded-xl mb-6">
+                    <p class="text-[#ff5f00] font-bold text-xs">🚚 Expresní dodání do 2 dnů zdarma</p>
+                </div>
                 <div class="mt-auto flex justify-between items-end">
-                    <div class="text-3xl font-black text-black">15 000 Kč</div>
-                    <button onclick="openCheckout('KuKirin G4 Max', '15 000 Kč')" class="bg-black text-white px-6 py-3 rounded-2xl font-bold hover:bg-[#ff5f00] transition">Koupit</button>
+                    <div class="text-4xl font-black text-black">15 000 Kč</div>
+                    <button onclick="openCheckout('KuKirin G4 Max', '15 000 Kč')" class="bg-black text-white w-12 h-12 rounded-2xl flex items-center justify-center hover:bg-[#ff5f00] transition shadow-lg">+</button>
                 </div>
             </div>
 
         </div>
     </section>
 
-    <section id="o-nas" class="py-24 bg-black text-white px-6">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-4xl font-extrabold mb-8">Specialisté na Kukirin</h2>
-            <p class="text-xl text-gray-400 leading-relaxed mb-12">
-                Jsme přímí distributoři. Díky tomu vám můžeme nabídnout bezkonkurenční ceny, které jinde nenajdete. Všechny naše koloběžky jsou odesílány z lokálního skladu s doručením do 48 hodin.
-            </p>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div><div class="text-4xl font-black text-[#ff5f00]">5000+</div><div class="text-sm text-gray-500 uppercase">Spokojených jezdců</div></div>
-                <div><div class="text-4xl font-black text-[#ff5f00]">2 Dny</div><div class="text-sm text-gray-500 uppercase">Rychlost dodání</div></div>
-                <div><div class="text-4xl font-black text-[#ff5f00]">24/7</div><div class="text-sm text-gray-500 uppercase">Podpora</div></div>
+    <section id="o-nas" class="py-32 bg-gray-50 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black mb-6 uppercase tracking-tighter italic">Kdo jsme?</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        Jsme skupina nadšenců, kteří věří, že elektrokoloběžky KuKirin jsou budoucností dopravy. Díky přímým kontaktům v továrně vám nabízíme ceny, které boří trh.
+                    </p>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Všechny objednávky balíme hned po přijetí platby. Naším cílem je, abyste mohli jezdit už do 48 hodin od nákupu.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white p-8 rounded-[2rem] shadow-sm border text-center">
+                        <div class="text-3xl font-black text-[#ff5f00]">2dny</div>
+                        <div class="text-[10px] uppercase font-bold text-gray-400">Rychlost doručení</div>
+                    </div>
+                    <div class="bg-black p-8 rounded-[2rem] shadow-xl text-center">
+                        <div class="text-3xl font-black text-white">100%</div>
+                        <div class="text-[10px] uppercase font-bold text-gray-500">Záruka kvality</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="recenze" class="py-24 px-6">
-        <h2 class="text-3xl font-black text-center mb-16 uppercase italic">Řekli o nás</h2>
-        <div class="grid md:grid-cols-3 gap-6 container mx-auto">
-            <div class="bg-gray-50 p-8 rounded-3xl">
-                <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"G2 za 4 litry? Nejdřív jsem nevěřil, ale fakt přišla do dvou dnů. Úplně nová, zabalená. Top obchod!"</p>
-                <p class="font-black">Radek H.</p>
+    <section id="recenze" class="py-24 px-6 container mx-auto text-center">
+        <h2 class="text-3xl font-black mb-16 uppercase italic">Reakce od komunity</h2>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="p-6 text-left border rounded-3xl">
+                <p class="text-sm italic mb-4">"G2 za 4k? Neuvěřitelný, ale je doma! Díky!"</p>
+                <p class="font-bold text-xs">- Honza R.</p>
             </div>
-            <div class="bg-gray-50 p-8 rounded-3xl">
-                <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"G4 Max je neskutečný dělo. Za tuhle cenu nikde jinde nekoupíte. PayPal platba proběhla hned."</p>
-                <p class="font-black">Mirek S.</p>
+            <div class="p-6 text-left border rounded-3xl">
+                <p class="text-sm italic mb-4">"G4 Max přišel hned druhý den. Super zabalený."</p>
+                <p class="font-bold text-xs">- Marek L.</p>
             </div>
-            <div class="bg-gray-50 p-8 rounded-3xl">
-                <div class="flex text-yellow-400 mb-4">★★★★★</div>
-                <p class="text-gray-600 mb-6 italic">"Skvělá domluva, bleskové doručení. Doporučuji všem, co chtějí ušetřit."</p>
-                <p class="font-black">Jakub L.</p>
+            <div class="p-6 text-left border rounded-3xl">
+                <p class="text-sm italic mb-4">"Skvělá komunikace a brutální stroje. Doporučuji."</p>
+                <p class="font-bold text-xs">- Petr K.</p>
+            </div>
+            <div class="p-6 text-left border rounded-3xl">
+                <p class="text-sm italic mb-4">"Ceny jsou fakt nízký, měl jsem strach, ale vše ok."</p>
+                <p class="font-bold text-xs">- Filip Š.</p>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t text-center text-gray-400 text-sm">
-        <p>&copy; 2024 KUKIRINWHEEL SHOP. Všechna práva vyhrazena.</p>
+    <footer class="py-16 border-t bg-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-black flex items-center justify-center rounded-lg">
+                    <span class="text-white font-black text-sm">KW</span>
+                </div>
+                <span class="font-bold tracking-tighter uppercase text-xs">KUKIRINWHEEL SHOP</span>
+            </div>
+            <p class="text-gray-400 text-[10px] uppercase tracking-widest font-bold">© 2024 KukirinWheel Shop. Všechna práva vyhrazena.</p>
+        </div>
     </footer>
 
     <script>
@@ -180,52 +230,41 @@
             const html = `
                 <html>
                 <head>
-                    <title>Pokladna | Bezpečná platba</title>
+                    <title>Pokladna | PayPal Platba</title>
                     <script src="https://cdn.tailwindcss.com"><\/script>
-                    <style>body { background-color: #f3f4f6; font-family: sans-serif; }<\/style>
                 </head>
-                <body class="p-6">
-                    <div id="checkout-form" class="bg-white rounded-3xl shadow-2xl p-8 max-w-md mx-auto mt-4">
-                        <div class="text-center mb-8">
-                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" class="h-10 mx-auto mb-4">
-                            <h2 class="text-2xl font-bold">Dokončení objednávky</h2>
-                            <p class="text-gray-500 mt-2">Položka: <span class="text-black font-bold font-lg">${item}</span></p>
-                            <p class="text-gray-500">Cena k úhradě: <span class="text-[#ff5f00] font-black text-xl">${price}</span></p>
-                        </div>
-                        
-                        <div class="space-y-4">
-                            <div><label class="text-xs font-bold uppercase text-gray-400">Celé jméno</label><input type="text" class="w-full p-4 bg-gray-50 border-none rounded-2xl mt-1 focus:ring-2 focus:ring-[#ff5f00]" placeholder="Jan Novák"></div>
-                            <div><label class="text-xs font-bold uppercase text-gray-400">Email</label><input type="email" class="w-full p-4 bg-gray-50 border-none rounded-2xl mt-1 focus:ring-2 focus:ring-[#ff5f00]" placeholder="email@seznam.cz"></div>
-                            <div><label class="text-xs font-bold uppercase text-gray-400">Adresa doručení</label><input type="text" class="w-full p-4 bg-gray-50 border-none rounded-2xl mt-1 focus:ring-2 focus:ring-[#ff5f00]" placeholder="Ulice, č.p., Město, PSČ"></div>
+                <body class="bg-white p-6 font-sans">
+                    <div id="form-wrap" class="max-w-md mx-auto">
+                        <div class="text-center py-8">
+                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" class="h-10 mx-auto mb-6">
+                            <h2 class="text-3xl font-black tracking-tighter uppercase mb-2">Checkout</h2>
+                            <p class="text-gray-500 font-bold uppercase text-[10px] tracking-widest">Objednáváte: ${item}</p>
+                            <p class="text-3xl font-black text-[#ff5f00] mt-2 underline">${price}</p>
                         </div>
 
-                        <button onclick="payNow()" class="w-full bg-[#0070ba] text-white font-bold py-5 rounded-2xl mt-8 hover:bg-[#005ea6] transition shadow-lg shadow-blue-200 uppercase tracking-widest">Zaplatit přes PayPal</button>
+                        <div class="space-y-4 mb-8">
+                            <input type="text" placeholder="CELÉ JMÉNO" class="w-full p-4 bg-gray-50 border-none rounded-2xl font-bold text-xs uppercase tracking-widest">
+                            <input type="email" placeholder="EMAILOVÁ ADRESA" class="w-full p-4 bg-gray-50 border-none rounded-2xl font-bold text-xs uppercase tracking-widest">
+                            <input type="text" placeholder="DORUČOVACÍ ADRESA (ULICE, MĚSTO, PSČ)" class="w-full p-4 bg-gray-50 border-none rounded-2xl font-bold text-xs uppercase tracking-widest">
+                        </div>
+
+                        <button onclick="payNow()" class="w-full bg-[#0070ba] text-white font-black py-5 rounded-3xl uppercase tracking-widest hover:scale-[1.02] transition">Zaplatit přes PayPal</button>
                     </div>
 
-                    <div id="loading" class="hidden text-center mt-40">
-                         <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-[#ff5f00] border-t-transparent mb-4"></div>
-                         <p class="text-lg font-bold">Zpracování platby...</p>
-                    </div>
-
-                    <div id="success" class="hidden text-center mt-20 bg-white p-10 rounded-3xl shadow-xl">
-                        <div class="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6 text-4xl">✓</div>
-                        <h2 class="text-3xl font-black mb-4 uppercase">OBJEDNÁNO!</h2>
-                        <p class="text-gray-600 leading-relaxed mb-6">
-                            Děkujeme za váš nákup. Vaše platba je nyní v systému. <br><br>
-                            <span class="font-bold text-black">Počkejte prosím, než bude vaše platba zpracována a odeslána (cca 2-3 dny).</span><br><br>
-                            O každém kroku vás budeme informovat na váš zadaný email.
-                        </p>
-                        <button onclick="window.close()" class="text-[#ff5f00] font-bold uppercase tracking-widest">Zavřít okno</button>
+                    <div id="done" class="hidden text-center pt-24">
+                        <div class="w-24 h-24 bg-green-50 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 text-5xl">✓</div>
+                        <h2 class="text-4xl font-black tracking-tighter uppercase mb-6">Platba přijata!</h2>
+                        <div class="bg-gray-50 p-8 rounded-[2.5rem] text-sm text-gray-600 leading-relaxed font-bold">
+                            <p class="mb-4">Počkejte prosím, než vaše platba bude zpracována a odeslána (cca 2-3 dny).</p>
+                            <p>Jakmile balík předáme dopravci, budete okamžitě informováni přes váš email.</p>
+                        </div>
+                        <button onclick="window.close()" class="mt-12 text-[#ff5f00] font-black uppercase text-xs tracking-widest">Zpět do obchodu</button>
                     </div>
 
                     <script>
                         function payNow() {
-                            document.getElementById('checkout-form').classList.add('hidden');
-                            document.getElementById('loading').classList.remove('hidden');
-                            setTimeout(() => {
-                                document.getElementById('loading').classList.add('hidden');
-                                document.getElementById('success').classList.remove('hidden');
-                            }, 2000);
+                            document.getElementById('form-wrap').style.display = 'none';
+                            document.getElementById('done').style.display = 'block';
                         }
                     <\/script>
                 </body>
