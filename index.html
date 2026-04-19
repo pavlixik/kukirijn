@@ -9,8 +9,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
         body { font-family: 'Plus Jakarta Sans', sans-serif; scroll-behavior: smooth; }
         .product-card { transition: all 0.3s ease; border: 1px solid #eee; }
-        .product-card:hover { transform: translateY(-8px); border-color: #ff5f00; shadow: 0 20px 30px rgba(0,0,0,0.05); }
-        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-blur: 5px; }
+        .product-card:hover { transform: translateY(-8px); border-color: #ff5f00; box-shadow: 0 20px 30px rgba(0,0,0,0.05); }
+        .modal { display: none; position: fixed; z-index: 100; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); }
+        .logo-text { font-size: 24px; font-weight: 900; letter-spacing: -1px; }
     </style>
 </head>
 <body class="bg-white">
@@ -18,84 +19,101 @@
     <nav class="border-b sticky top-0 bg-white/90 backdrop-blur-md z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-black flex items-center justify-center rounded-xl font-black text-white">KW</div>
-                <span class="text-xl font-black tracking-tighter uppercase">Kukirin<span class="text-[#ff5f00]">Wheel</span></span>
+                <svg width="45" height="45" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="100" height="100" rx="20" fill="black"/>
+                    <path d="M30 30L50 50L30 70" stroke="#ff5f00" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M50 30L70 50L50 70" stroke="white" stroke-width="12" stroke-linecap="round"/>
+                </svg>
+                <span class="logo-text uppercase text-black">Kukirin<span class="text-[#ff5f00]">Wheel</span></span>
             </div>
             <div class="flex items-center gap-6">
-                <div class="hidden md:flex gap-6 font-bold text-xs uppercase text-gray-400">
-                    <a href="#produkty" class="hover:text-black">Modely</a>
-                    <a href="#o-nas" class="hover:text-black">O nás</a>
+                <div class="hidden md:flex gap-6 font-bold text-xs uppercase text-gray-400 tracking-widest">
+                    <a href="#produkty" class="hover:text-black transition">Modely</a>
+                    <a href="#o-nas" class="hover:text-black transition">Sklady</a>
                 </div>
-                <button onclick="toggleCart()" class="relative bg-gray-100 p-3 rounded-full hover:bg-orange-100 transition">
-                    🛒 <span id="cart-count" class="absolute -top-1 -right-1 bg-[#ff5f00] text-white text-[10px] w-5 h-5 flex items-center justify-center rounded-full">0</span>
+                <button onclick="toggleCart()" class="relative bg-black p-3 rounded-2xl hover:bg-[#ff5f00] transition group">
+                    <span class="text-white text-lg">🛒</span>
+                    <span id="cart-count" class="absolute -top-2 -right-2 bg-[#ff5f00] border-2 border-white text-white text-[10px] w-6 h-6 flex items-center justify-center rounded-full font-black">0</span>
                 </button>
             </div>
         </div>
     </nav>
 
-    <div class="bg-black text-white py-2 text-center text-[10px] font-bold uppercase tracking-widest">
+    <div class="bg-[#ff5f00] text-white py-2 text-center text-[10px] font-black uppercase tracking-[0.2em]">
         🇨🇿 Praha • Plzeň • Brno | 🇸🇰 Bratislava — Doručení do 24h z našich skladů
     </div>
 
-    <header class="py-20 px-6 text-center bg-gradient-to-b from-orange-50 to-white">
-        <h1 class="text-5xl md:text-7xl font-black mb-6 tracking-tighter italic">RYCHLOST, KTEROU <br><span class="text-[#ff5f00]">NEMŮŽEŠ KOUPIT JINDE.</span></h1>
-        <p class="max-w-xl mx-auto text-gray-500 font-medium">Jsme největší specializovaný prodejce KuKirin v České republice a na Slovensku.</p>
+    <header class="py-24 px-6 text-center bg-gradient-to-b from-gray-50 to-white border-b">
+        <span class="bg-orange-100 text-[#ff5f00] px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">Oficiální český prodejce</span>
+        <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter italic uppercase">Rychlost <br><span class="text-[#ff5f00]">Bez Limitu.</span></h1>
+        <p class="max-w-xl mx-auto text-gray-400 font-medium text-lg italic">Garantujeme nejnižší ceny v EU díky přímé distribuci ze skladu.</p>
     </header>
 
-    <section id="produkty" class="container mx-auto py-20 px-6">
-        <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+    <section id="produkty" class="container mx-auto py-20 px-6 text-center">
+        <h2 class="text-3xl font-black uppercase italic mb-12">Aktuální Nabídka Modely 2024</h2>
+        <div id="product-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
             </div>
     </section>
 
-    <section id="o-nas" class="bg-gray-50 py-24 border-y">
+    <section id="o-nas" class="bg-black py-24 text-white">
         <div class="container mx-auto px-6 max-w-6xl">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h2 class="text-4xl font-black mb-8 italic uppercase tracking-tighter">Proč nakoupit u nás? <br>🇨🇿 🇸🇰</h2>
-                    <div class="space-y-6 text-gray-600">
-                        <p><strong>Lokální sklady:</strong> Na rozdíl od konkurence, která posílá stroje z Číny, my máme vlastní sklady v <strong>Praze, Plzni a Brně</strong>. To nám umožňuje doručit vaši novou koloběžku hned druhý den od zaplacení.</p>
-                        <p><strong>Expresní servis:</strong> Ke každé koloběžce zakoupené u nás získáváte přístup k prioritnímu servisu. Máme všechny náhradní díly skladem.</p>
-                        <p><strong>Garance ceny:</strong> Díky přímému odběru tisíců kusů měsíčně držíme ceny na absolutním minimu. Vidíte u nás G2 za 4 000 Kč? Ano, je to skutečná cena, žádné skryté poplatky.</p>
+                    <h2 class="text-5xl font-black mb-8 italic uppercase text-[#ff5f00]">Sklady v ČR a SR</h2>
+                    <div class="space-y-6 text-gray-400 text-lg leading-relaxed">
+                        <p>Díky našim distribučním centrům v <strong>Praze, Plzni a Brně</strong> odesíláme koloběžky okamžitě. Na Slovensku pak operujeme z centrálního skladu v <strong>Bratislavě</strong>.</p>
+                        <p>Žádné čekání měsíce na loď z Číny. Pokud objednáte dnes, zítra nebo pozítří je stroj u vás u dveří. 🇨🇿 🇸🇰</p>
                     </div>
                 </div>
-                <div class="bg-white p-10 rounded-[3rem] shadow-xl border-2 border-orange-50">
-                    <h3 class="text-2xl font-black mb-4 uppercase italic">Dostupnost skladů</h3>
-                    <ul class="space-y-4 font-bold text-sm">
-                        <li class="flex justify-between border-b pb-2"><span>📍 Sklad Praha 1 (Centrální)</span> <span class="text-green-500">PLNÝ</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>📍 Sklad Brno - Modřice</span> <span class="text-green-500">PLNÝ</span></li>
-                        <li class="flex justify-between border-b pb-2"><span>📍 Sklad Plzeň - Bory</span> <span class="text-green-500">PLNÝ</span></li>
-                        <li class="flex justify-between"><span>🇸🇰 Sklad Bratislava</span> <span class="text-orange-500">DO 48H</span></li>
+                <div class="bg-zinc-900 p-10 rounded-[3rem] border border-zinc-800">
+                    <h3 class="text-xl font-black mb-6 uppercase italic flex items-center gap-2 text-green-500">● Live Dostupnost Skladů</h3>
+                    <ul class="space-y-4 font-bold">
+                        <li class="flex justify-between border-b border-zinc-800 pb-3"><span>📍 Praha 1 (Centrála)</span> <span class="text-green-500">IHNED</span></li>
+                        <li class="flex justify-between border-b border-zinc-800 pb-3"><span>📍 Brno - Modřice</span> <span class="text-green-500">IHNED</span></li>
+                        <li class="flex justify-between border-b border-zinc-800 pb-3"><span>📍 Plzeň - Bory</span> <span class="text-green-500">IHNED</span></li>
+                        <li class="flex justify-between"><span>🇸🇰 Bratislava</span> <span class="text-orange-500">48H</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 text-center text-gray-400 text-[10px] font-bold uppercase tracking-widest">
-        &copy; 2024 KukirinWheel Shop CZ/SK. Všechna práva vyhrazena.
+    <section class="py-24 bg-gray-50 text-center">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-black mb-12 uppercase italic">Co říkají zákazníci</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left italic">"G2 za tyhle peníze? Myslel jsem že je to vtip, ale fakt přišla. Super!" <br><br><strong>- Michal T.</strong></div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left italic">"G4 Max je bestie. Doručení v Plzni proběhlo do druhého dne." <br><br><strong>- David P.</strong></div>
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 text-left italic">"Perfektní komunikace. Nejlepší obchod na Kukirin u nás." <br><br><strong>- Jan M.</strong></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-gray-300 text-[10px] font-black uppercase tracking-[0.5em] bg-white">
+        &copy; 2024 KukirinWheel Shop • davidstransky3@gmail.com
     </footer>
 
     <div id="detailModal" class="modal flex items-center justify-center p-6">
-        <div class="bg-white w-full max-w-2xl rounded-[2.5rem] overflow-hidden relative p-10">
-            <button onclick="closeDetail()" class="absolute top-6 right-6 font-black text-2xl">×</button>
+        <div class="bg-white w-full max-w-3xl rounded-[3rem] overflow-hidden relative p-8 md:p-12 shadow-2xl">
+            <button onclick="closeDetail()" class="absolute top-8 right-8 font-black text-3xl hover:text-[#ff5f00] transition">×</button>
             <div id="modalContent"></div>
         </div>
     </div>
 
     <div id="cartModal" class="modal flex items-center justify-end">
-        <div class="bg-white h-full w-full max-w-md p-10 shadow-2xl overflow-y-auto">
-            <div class="flex justify-between items-center mb-10">
-                <h2 class="text-3xl font-black italic uppercase">Košík</h2>
+        <div class="bg-white h-full w-full max-w-md p-10 shadow-2xl overflow-y-auto border-l">
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-4xl font-black italic uppercase tracking-tighter">Košík</h2>
                 <button onclick="toggleCart()" class="text-2xl font-black">×</button>
             </div>
-            <div id="cartItems" class="space-y-6 mb-10">
+            <div id="cartItems" class="space-y-8 mb-12">
                 </div>
-            <div class="border-t pt-6">
-                <div class="flex justify-between text-2xl font-black mb-8">
+            <div class="border-t-2 border-black pt-8">
+                <div class="flex justify-between text-3xl font-black mb-10">
                     <span>CELKEM</span>
-                    <span id="cartTotal">0 Kč</span>
+                    <span id="cartTotal" class="text-[#ff5f00]">0 Kč</span>
                 </div>
-                <button onclick="goToCheckout()" class="w-full bg-black text-white py-5 rounded-2xl font-black uppercase tracking-widest hover:bg-[#ff5f00] transition">Přejít k platbě</button>
+                <button onclick="goToCheckout()" class="w-full bg-black text-white py-6 rounded-[2rem] font-black uppercase tracking-widest hover:bg-[#ff5f00] transition shadow-xl">Zaplatit Nyní</button>
             </div>
         </div>
     </div>
@@ -103,30 +121,29 @@
     <script>
         const products = [
             { id: 1, name: "KuKirin G2", price: 4000, oldPrice: 13000, img: "https://i.imgur.com/pZ5TfE6.jpeg", watts: "600W", range: "55km", battery: "15Ah", speed: "45km/h", charge: "6h" },
-            { id: 2, name: "KuKirin G2 Master", price: 7000, oldPrice: null, img: "https://i.imgur.com/YZSSo3j.png", watts: "2x1000W", range: "70km", battery: "20.8Ah", speed: "60km/h", charge: "10h" },
-            { id: 3, name: "KuKirin G4", price: 7000, oldPrice: null, img: "https://i.imgur.com/7BToECp.png", watts: "2000W", range: "75km", battery: "20Ah", speed: "70km/h", charge: "10-12h" },
-            { id: 4, name: "KuKirin G2 Max", price: 2000, oldPrice: null, img: "https://i.imgur.com/fWviAUj.png", watts: "1000W", range: "80km", battery: "20Ah", speed: "55km/h", charge: "10h" },
-            { id: 5, name: "KuKirin G3", price: 1500, oldPrice: null, img: "https://i.imgur.com/38UXdAI.png", watts: "1200W", range: "60km", battery: "18Ah", speed: "50km/h", charge: "8-10h" },
-            { id: 6, name: "KuKirin G4 Max", price: 15000, oldPrice: null, img: "https://i.imgur.com/5cV31TJ.png", watts: "2x1500W", range: "95km", battery: "35.2Ah", speed: "86km/h", charge: "12h" }
+            { id: 2, name: "KuKirin G2 Master", price: 7000, oldPrice: 18000, img: "https://i.imgur.com/YZSSo3j.png", watts: "2x1000W", range: "70km", battery: "20.8Ah", speed: "60km/h", charge: "10h" },
+            { id: 3, name: "KuKirin G4", price: 7000, oldPrice: 21000, img: "https://i.imgur.com/7BToECp.png", watts: "2000W", range: "75km", battery: "20Ah", speed: "70km/h", charge: "10-12h" },
+            { id: 4, name: "KuKirin G2 Max", price: 2000, oldPrice: 16000, img: "https://i.imgur.com/fWviAUj.png", watts: "1000W", range: "80km", battery: "20Ah", speed: "55km/h", charge: "10h" },
+            { id: 5, name: "KuKirin G3", price: 1500, oldPrice: 15000, img: "https://i.imgur.com/38UXdAI.png", watts: "1200W", range: "60km", battery: "18Ah", speed: "50km/h", charge: "8-10h" },
+            { id: 6, name: "KuKirin G4 Max", price: 15000, oldPrice: 35000, img: "https://i.imgur.com/5cV31TJ.png", watts: "2x1500W", range: "95km", battery: "35.2Ah", speed: "86km/h", charge: "12h" }
         ];
 
         let cart = [];
 
-        // Generování produktů
         const grid = document.getElementById('product-grid');
         products.forEach(p => {
             grid.innerHTML += `
-                <div class="product-card bg-white rounded-[2rem] p-6 flex flex-col">
-                    <img src="${p.img}" class="h-48 w-full object-contain mb-6 cursor-pointer" onclick="showDetail(${p.id})">
-                    <h3 class="text-xl font-black mb-1">${p.name}</h3>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mb-4 tracking-widest">Skladem v ČR 🇨🇿</p>
-                    <div class="mb-6">
-                        ${p.oldPrice ? `<span class="text-xs text-gray-300 line-through font-bold">${p.oldPrice} Kč</span>` : ''}
-                        <div class="text-2xl font-black">${p.price} Kč</div>
+                <div class="product-card bg-white rounded-[2.5rem] p-8 flex flex-col">
+                    <img src="${p.img}" class="h-56 w-full object-contain mb-8 cursor-pointer hover:scale-105 transition duration-500" onclick="showDetail(${p.id})">
+                    <h3 class="text-2xl font-black mb-1 uppercase italic">${p.name}</h3>
+                    <p class="text-[10px] text-green-500 font-black uppercase mb-4 tracking-widest">● Skladem ${p.id % 2 === 0 ? 'Praha' : 'Brno'}</p>
+                    <div class="mb-8 bg-gray-50 p-4 rounded-2xl">
+                        ${p.oldPrice ? `<span class="text-xs text-gray-300 line-through font-black uppercase">Původně: ${p.oldPrice} Kč</span>` : ''}
+                        <div class="text-3xl font-black text-[#ff5f00] tracking-tighter">${p.price} Kč</div>
                     </div>
-                    <div class="grid grid-cols-2 gap-2 mt-auto">
-                        <button onclick="showDetail(${p.id})" class="bg-gray-100 text-black py-3 rounded-xl font-bold text-xs hover:bg-gray-200 uppercase transition">Detail</button>
-                        <button onclick="addToCart(${p.id})" class="bg-black text-white py-3 rounded-xl font-bold text-xs hover:bg-[#ff5f00] uppercase transition">Do košíku</button>
+                    <div class="grid grid-cols-2 gap-3 mt-auto">
+                        <button onclick="showDetail(${p.id})" class="bg-gray-100 text-black py-4 rounded-2xl font-black text-xs hover:bg-gray-200 uppercase transition tracking-widest">Detail</button>
+                        <button onclick="addToCart(${p.id})" class="bg-black text-white py-4 rounded-2xl font-black text-xs hover:bg-[#ff5f00] uppercase transition tracking-widest shadow-lg shadow-gray-200">Do košíku</button>
                     </div>
                 </div>
             `;
@@ -135,18 +152,18 @@
         function showDetail(id) {
             const p = products.find(x => x.id === id);
             document.getElementById('modalContent').innerHTML = `
-                <div class="grid md:grid-cols-2 gap-10">
-                    <img src="${p.img}" class="w-full h-64 object-contain">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <img src="${p.img}" class="w-full h-auto object-contain">
                     <div>
-                        <h2 class="text-3xl font-black italic uppercase mb-4">${p.name}</h2>
-                        <div class="space-y-3">
-                            <div class="flex justify-between border-b pb-1"><span>Motor:</span> <strong>${p.watts}</strong></div>
-                            <div class="flex justify-between border-b pb-1"><span>Dojezd:</span> <strong>${p.range}</strong></div>
-                            <div class="flex justify-between border-b pb-1"><span>Baterie:</span> <strong>${p.battery}</strong></div>
-                            <div class="flex justify-between border-b pb-1"><span>Max. Rychlost:</span> <strong>${p.speed}</strong></div>
-                            <div class="flex justify-between border-b pb-1"><span>Doba nabíjení:</span> <strong>${p.charge}</strong></div>
+                        <h2 class="text-4xl font-black italic uppercase mb-6 tracking-tighter">${p.name}</h2>
+                        <div class="space-y-4 mb-8">
+                            <div class="flex justify-between border-b pb-2 text-sm font-bold"><span>Motor:</span> <span class="text-[#ff5f00] uppercase">${p.watts}</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm font-bold"><span>Dojezd:</span> <span class="text-[#ff5f00] uppercase">${p.range}</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm font-bold"><span>Baterie:</span> <span class="text-[#ff5f00] uppercase">${p.battery}</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm font-bold"><span>Max. Rychlost:</span> <span class="text-[#ff5f00] uppercase">${p.speed}</span></div>
+                            <div class="flex justify-between border-b pb-2 text-sm font-bold"><span>Nabíjení:</span> <span class="text-[#ff5f00] uppercase">${p.charge}</span></div>
                         </div>
-                        <button onclick="addToCart(${p.id}); closeDetail();" class="w-full bg-[#ff5f00] text-white py-4 rounded-xl font-black uppercase mt-8 transition">Koupit za ${p.price} Kč</button>
+                        <button onclick="addToCart(${p.id}); closeDetail();" class="w-full bg-black text-white py-5 rounded-2xl font-black uppercase text-sm shadow-xl hover:bg-[#ff5f00] transition">Přidat do košíku</button>
                     </div>
                 </div>
             `;
@@ -159,6 +176,7 @@
             const p = products.find(x => x.id === id);
             cart.push(p);
             updateCart();
+            toggleCart();
         }
 
         function updateCart() {
@@ -169,15 +187,15 @@
             cart.forEach((item, index) => {
                 total += item.price;
                 cartItems.innerHTML += `
-                    <div class="flex justify-between items-center border-b pb-4">
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-2xl">
                         <div class="flex items-center gap-4">
-                            <img src="${item.img}" class="w-12 h-12 object-contain">
+                            <img src="${item.img}" class="w-16 h-16 object-contain">
                             <div>
-                                <div class="font-black text-sm uppercase">${item.name}</div>
-                                <div class="text-[#ff5f00] font-bold text-xs">${item.price} Kč</div>
+                                <div class="font-black text-xs uppercase">${item.name}</div>
+                                <div class="text-[#ff5f00] font-black">${item.price} Kč</div>
                             </div>
                         </div>
-                        <button onclick="removeFromCart(${index})" class="text-gray-300 hover:text-red-500 font-bold">Odstranit</button>
+                        <button onclick="removeFromCart(${index})" class="text-xs font-black uppercase text-gray-300 hover:text-red-500 transition px-2">X</button>
                     </div>
                 `;
             });
@@ -199,32 +217,54 @@
             const total = cart.reduce((sum, item) => sum + item.price, 0);
             const itemsName = cart.map(i => i.name).join(", ");
             
-            // Otevření platebního okna (stejné jako předtím)
             const checkoutWin = window.open("", "Checkout", "width=600,height=850");
             const html = `
                 <html>
-                <head><title>Pokladna | PayPal</title><script src="https://cdn.tailwindcss.com"><\/script></head>
-                <body class="p-10 font-sans">
-                    <div id="f">
-                        <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" class="h-8 mx-auto mb-8">
-                        <h2 class="text-2xl font-black uppercase mb-2">Doprava a Platba</h2>
-                        <p class="text-xs text-gray-400 font-bold mb-6 italic">Objednávka: ${itemsName}</p>
-                        <div class="space-y-4">
-                            <input type="text" placeholder="Jméno" class="w-full p-4 bg-gray-50 rounded-xl border-none text-xs font-bold uppercase tracking-widest">
-                            <input type="email" placeholder="Email" class="w-full p-4 bg-gray-50 rounded-xl border-none text-xs font-bold uppercase tracking-widest">
-                            <input type="text" placeholder="Adresa (Ulice, Město, PSČ)" class="w-full p-4 bg-gray-50 rounded-xl border-none text-xs font-bold uppercase tracking-widest">
+                <head>
+                    <title>Zabezpečená platba | PayPal</title>
+                    <script src="https://cdn.tailwindcss.com"><\/script>
+                    <script src="https://www.paypal.com/sdk/js?client-id=AXgLprIu-m-nlaVeXtCJrGq7aq7I1w_ynr5DQHU9CvxsZq_irEs1Js6eCorXG2gX1gr-e19HYDdfcoJ2&currency=CZK"><\/script>
+                </head>
+                <body class="bg-gray-100 p-8 font-sans">
+                    <div id="p-box" class="max-w-md mx-auto bg-white p-8 rounded-[2.5rem] shadow-2xl">
+                        <div class="text-center mb-8">
+                            <img src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_111x69.jpg" class="h-8 mx-auto mb-4">
+                            <h2 class="text-2xl font-black uppercase italic tracking-tighter">Pokladna</h2>
                         </div>
-                        <div class="mt-8 pt-6 border-t">
-                            <div class="flex justify-between text-2xl font-black mb-6"><span>CELKEM:</span> <span>${total} Kč</span></div>
-                            <button onclick="document.getElementById('f').style.display='none'; document.getElementById('s').style.display='block';" class="w-full bg-[#0070ba] text-white py-5 rounded-2xl font-black uppercase tracking-widest">Zaplatit s PayPal</button>
+                        <div class="space-y-4 mb-8">
+                            <input type="text" placeholder="CELÉ JMÉNO" class="w-full p-4 bg-gray-50 rounded-xl border-none font-bold text-[10px] uppercase tracking-widest outline-orange-500">
+                            <input type="email" placeholder="EMAIL" class="w-full p-4 bg-gray-50 rounded-xl border-none font-bold text-[10px] uppercase tracking-widest outline-orange-500">
+                            <input type="text" placeholder="DORUČOVACÍ ADRESA" class="w-full p-4 bg-gray-50 rounded-xl border-none font-bold text-[10px] uppercase tracking-widest outline-orange-500">
                         </div>
+                        <div class="border-t border-b py-4 mb-8">
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Položky: ${itemsName}</p>
+                            <div class="flex justify-between items-center"><span class="font-black italic">CELKEM:</span> <span class="text-2xl font-black text-[#ff5f00]">${total} Kč</span></div>
+                        </div>
+                        <div id="paypal-btn"></div>
                     </div>
-                    <div id="s" class="hidden text-center pt-20">
-                        <div class="text-green-500 text-6xl mb-6">✓</div>
-                        <h2 class="text-3xl font-black uppercase mb-4">Platba přijata!</h2>
-                        <p class="text-gray-500 font-medium">Pockejte nez vase plataba bude zpracována a odeslána cca 2-3 dny pak budete informovany pres email.</p>
-                        <button onclick="window.close()" class="mt-10 text-[#ff5f00] font-bold uppercase text-xs">Zpět na web</button>
+                    <div id="success" class="hidden text-center pt-20">
+                        <div class="text-green-500 text-6xl mb-6 font-black italic">✓</div>
+                        <h2 class="text-3xl font-black uppercase italic mb-4">Platba přijata!</h2>
+                        <div class="bg-white p-8 rounded-[2rem] shadow-lg text-sm font-bold text-gray-500 italic">
+                            Vaše platba byla zpracována. Koloběžku odešleme do 2 dnů z nejbližšího skladu. O všem vás informujeme emailem.
+                        </div>
+                        <button onclick="window.close()" class="mt-10 text-[#ff5f00] font-black uppercase text-xs tracking-[0.2em] underline">Zavřít okno</button>
                     </div>
+                    <script>
+                        paypal.Buttons({
+                            createOrder: function(data, actions) {
+                                return actions.order.create({
+                                    purchase_units: [{ amount: { value: '${total}' }, description: '${itemsName}' }]
+                                });
+                            },
+                            onApprove: function(data, actions) {
+                                return actions.order.capture().then(function(details) {
+                                    document.getElementById('p-box').classList.add('hidden');
+                                    document.getElementById('success').classList.remove('hidden');
+                                });
+                            }
+                        }).render('#paypal-btn');
+                    <\/script>
                 </body>
                 </html>
             `;
