@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moje Portfolio | Web Design & Vývoj</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Pavel Markvart | Web Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #2563eb;
-            --dark: #0f172a;
-            --light: #f8fafc;
-            --accent: #38bdf8;
+            --primary: #007bff;
+            --secondary: #6c757d;
+            --dark: #1a1a1a;
+            --light: #ffffff;
+            --gray: #f4f4f9;
+            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
+
+        html { scroll-behavior: smooth; }
 
         body {
             background-color: var(--light);
@@ -26,188 +30,176 @@
             line-height: 1.6;
         }
 
-        /* Hero Sekce */
-        header {
-            background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
-            color: white;
-            padding: 100px 20px;
+        /* --- NAVIGACE --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); }
+
+        /* --- HERO SEKCE --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-        }
-
-        header h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            color: var(--accent);
-        }
-
-        /* Portfolio Projekty */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content {
+            background: radial-gradient(circle at top right, #e3f2fd, #ffffff);
             padding: 20px;
         }
 
-        .card-price {
-            display: inline-block;
-            background: var(--primary);
+        .hero h1 { font-size: 4rem; margin-bottom: 20px; animation: fadeInUp 0.8s ease; }
+        .hero p { font-size: 1.5rem; color: var(--secondary); margin-bottom: 30px; animation: fadeInUp 1s ease; }
+
+        .btn {
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+        }
+
+        /* --- PORTFOLIO --- */
+        .section { padding: 100px 10%; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .card {
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+
+        .card-info { padding: 25px; }
+        .price-badge {
+            position: absolute;
+            top: 20px; right: 20px;
+            background: var(--dark);
             color: white;
             padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            margin-top: 10px;
+            border-radius: 50px;
+            font-size: 0.9rem;
         }
 
-        /* Ceník */
-        .pricing {
-            background: #e2e8f0;
-            padding: 80px 20px;
-        }
-
-        .price-table {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .price-box {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            width: 300px;
-            text-align: center;
-            border: 2px solid transparent;
-        }
-
-        .price-box.popular {
-            border-color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        .price-box h3 { font-size: 1.5rem; margin-bottom: 15px; }
-        .price-box .cost { font-size: 2.5rem; font-weight: bold; color: var(--primary); }
-
-        footer {
+        /* --- KONTAKT --- */
+        .contact {
             background: var(--dark);
             color: white;
             text-align: center;
-            padding: 40px;
+            border-radius: 30px;
+            margin: 50px 10%;
+            padding: 80px 40px;
+        }
+
+        .contact h2 { font-size: 3rem; margin-bottom: 20px; }
+        .contact a { color: var(--primary); font-size: 1.8rem; text-decoration: none; font-weight: 700; }
+
+        /* --- ANIMACE --- */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Jan Novák</h1>
-        <p>Profesionální tvorba webových stránek a aplikací</p>
-    </header>
+    <nav>
+        <div class="logo">PM.</div>
+        <div>
+            <a href="#work" style="text-decoration:none; color:var(--dark); margin-right:20px;">Práce</a>
+            <a href="#contact" class="btn btn-primary" style="padding: 10px 20px;">Kontakt</a>
+        </div>
+    </nav>
 
-    <section class="container">
-        <h2 class="section-title">Moje práce</h2>
+    <section class="hero">
+        <h1>Pavel Markvart</h1>
+        <p>Tvořím weby, které dávají smysl.</p>
+        <a href="#work" class="btn btn-primary">Zobrazit moji práci</a>
+    </section>
+
+    <section class="section" id="work">
+        <h2 style="text-align: center; font-size: 2.5rem;">Moje vygenerované projekty</h2>
         <div class="grid">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="E-shop design">
-                <div class="card-content">
-                    <h3>Moderní E-shop</h3>
-                    <p>Plně responzivní řešení pro prodej elektroniky s platební bránou.</p>
-                    <div class="card-price">od 25 000 Kč</div>
+                <span class="price-badge">7 000 Kč</span>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop" alt="Web 1">
+                <div class="card-info">
+                    <h3>Minimalistický Blog</h3>
+                    <p>Čistý design zaměřený na čtenáře a rychlost načítání.</p>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=500&q=80" alt="Portfolio design">
-                <div class="card-content">
-                    <h3>Firemní Prezentace</h3>
-                    <p>Elegantní web pro advokátní kancelář s důrazem na SEO.</p>
-                    <div class="card-price">od 12 000 Kč</div>
+                <span class="price-badge">11 000 Kč</span>
+                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?q=80&w=2340&auto=format&fit=crop" alt="Web 2">
+                <div class="card-info">
+                    <h3>Firemní Portál</h3>
+                    <p>Profesionální prezentace pro firmy se správou obsahu.</p>
                 </div>
             </div>
 
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&w=500&q=80" alt="App design">
-                <div class="card-content">
-                    <h3>SaaS Aplikace</h3>
-                    <p>Uživatelské rozhraní pro správu úkolů a týmovou komunikaci.</p>
-                    <div class="card-price">od 40 000 Kč</div>
+                <span class="price-badge">15 000 Kč</span>
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2340&auto=format&fit=crop" alt="Web 3">
+                <div class="card-info">
+                    <h3>Moderní E-commerce</h3>
+                    <p>Rychlý a bezpečný prodej vašich produktů online.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pricing">
-        <h2 class="section-title">Ceník služeb</h2>
-        <div class="price-table">
-            <div class="price-box">
-                <h3>Vizitka</h3>
-                <div class="cost">5 000 Kč</div>
-                <ul style="list-style: none; margin: 20px 0;">
-                    <li>Jednostránkový web</li>
-                    <li>Základní SEO</li>
-                    <li>Kontaktni formulář</li>
-                </ul>
-            </div>
-            <div class="price-box popular">
-                <h3>Standard</h3>
-                <div class="cost">15 000 Kč</div>
-                <ul style="list-style: none; margin: 20px 0;">
-                    <li>Až 5 podstránek</li>
-                    <li>Redakční systém</li>
-                    <li>Podpora 3 měsíce</li>
-                </ul>
-            </div>
-            <div class="price-box">
-                <h3>Premium</h3>
-                <div class="cost">35 000+ Kč</div>
-                <ul style="list-style: none; margin: 20px 0;">
-                    <li>E-shop / Aplikace</li>
-                    <li>UX analýza</li>
-                    <li>Vlastní grafika</li>
-                </ul>
-            </div>
+    <section class="contact" id="contact">
+        <h2>Máte projekt?</h2>
+        <p style="margin-bottom: 20px; opacity: 0.8;">Ozvěte se mi a probereme to u kávy (i virtuální).</p>
+        <a href="mailto:markvartpavel1@gmail.com">markvartpavel1@gmail.com</a>
+        <div style="margin-top: 40px;">
+            <p><strong>Pavel Markvart</strong></p>
+            <p>Webdesign & Vývoj</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Vyrobeno s ❤️ pro vaše podnikání</p>
-        <p>Najdete mě na GitHubu: <strong>@VaseJmeno</strong></p>
+    <footer style="text-align: center; padding: 40px; color: var(--secondary);">
+        &copy; 2024 Všechna práva vyhrazena.
     </footer>
 
 </body>
